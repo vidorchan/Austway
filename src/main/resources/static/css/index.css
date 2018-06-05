@@ -1,0 +1,380 @@
+#banner
+{
+	width:100%;
+	height:600px;
+	overflow:hidden;
+}
+
+#main 
+{
+	height:auto;
+	margin-top:20px;
+}
+
+ .news
+{
+	height:60px;
+	overflow:hidden;
+}
+
+ .news ul,  .news .news-header,  .news ul li a .news-title
+{
+	float:left;
+}
+
+ .news .more-news,  .news ul li a .news-date
+{
+	float:right;
+}
+
+ .news ul li
+{
+	list-style:none;
+}
+
+ .news ul li a
+{
+	display:block;
+	font-size:14px;
+	line-height:60px;
+	padding:0 10px;
+	width:950px;
+	height:60px;
+}
+
+ .news ul li a span,  .news .news-header
+{
+	color:#707070;
+}
+
+ .news .news-header
+{
+	line-height:60px;
+	padding-left:15px;
+}
+
+ .news .more-news
+{
+	display:block;
+	width:85px;
+	height:26px;
+	margin-right:15px;
+	color:#2fa8e1;
+	background:url(../images/more.png) no-repeat;
+	text-align:center;
+	vertical-align: middle;
+	line-height:26px;
+	margin-top:16px;
+}
+
+#main .header
+{
+	border-bottom:#e5e5e5 solid 1px;
+}
+
+#main .about
+{
+	width:842px;
+	height:272px;
+	/*background:url(../images/about_bg.png) no-repeat;*/
+	float:left;
+}
+
+#main .about .header, #main .service .header, #main .knowledge .header, #main .tool .header
+{
+	margin:0 auto;
+	width:90%;
+	line-height:70px;
+	height:70px;
+}
+
+#main .about .header .title
+{
+	font-size:24px;
+	color:#434343;
+	float:left;
+}
+
+#main .about .header .sub-title, #main .about .header .more
+{
+	font-size:14px;
+	color:#959595;
+	float:left;
+	line-height:80px;
+	padding-left:10px;
+	height:70px;
+}
+
+#main .about .header .more, #main .service .header .more, #main .knowledge .header .more
+{
+	float:right;
+}
+
+#main .about .content
+{
+	margin:5px auto 0 auto;
+	width:92%;
+}
+
+#main .about .content p
+{
+	width:470px;
+	float:left;
+	padding:10px;
+	line-height:30px;
+}
+
+#main .about .content img
+{
+	float:left;
+	padding-right:10px;
+}
+
+#main .m-banner
+{
+	float:left;
+	width:842px;
+	height:140;
+}
+
+#main .m-banner .middle-a
+{
+	margin:0 15px;
+}
+
+#main .service .header .title, #main .knowledge .header .title, #main .tool .header .title
+{
+	font-size:18px;
+	color:#535353;
+}
+
+#main .service .header .more, #main .knowledge .header .more
+{
+	font-size:14px;
+}
+
+#main .service, #main .knowledge
+{
+	width:415px;
+	float:left;
+	background:#fff;
+	height:500px;
+	margin-top:10px;
+}
+
+#main .service ul, #main .knowledge ul
+{
+	width:350px;
+	margin:0 auto;
+}
+
+#main .service ul li, #main .knowledge ul li
+{
+	list-style:url(../images/list_dote.png);
+}
+
+#main .service ul li a, #main .knowledge ul li a
+{
+	width:390px;
+	font-size:14px;
+	display:block;
+	line-height:30px;
+}
+
+#main .service ul li a:hover, #main .knowledge ul li a:hover
+{
+	color:#0079d2;
+}
+
+#main .knowledge
+{
+	margin-left:15px;
+}
+
+#main .right-contianer
+{
+	float:right;
+	width:343px
+}
+
+#main .login
+{
+	width:323px;
+	float:left;
+	padding:30px 10px 10px 10px;
+}
+
+#main .login .user, #main .login .pass
+{
+	float:left;
+	width:196px;
+	height:42px;
+	background:url(../images/user_input.png) no-repeat;
+	padding-left:35px;
+	font-size:16px;
+}
+
+#main .login .pass{
+	margin-top:15px;
+}
+
+#main .login .submit
+{
+	width:67px;
+	height:95px;
+	background:url(../images/btn_login.png) no-repeat;
+	clear:both;
+	margin-left:15px;
+}
+
+#main .login .pass
+{
+	background:url(../images/pass_input.png) no-repeat;
+}
+
+#main .tool
+{
+	width:343px;
+	height:auto;
+	float:left;
+	background:#fff;
+	padding-bottom:10px;
+	margin-bottom:15px;
+}
+
+#main .tool .content
+{
+	width:320px;
+	margin:0 auto;
+	padding-top:10px; 
+}
+
+#main .tool .info, #main .tool .dropdown
+{
+	float:left;
+	background:url(../images/common_input.png) no-repeat;
+	width:210px;
+	height:37px;
+	padding-left:10px; 
+}
+
+#main .tool .dropdown
+{
+	background:url(../images/select_bg.png) no-repeat;
+	border:none;
+	width:205px;
+}
+
+.dropdown .selected
+{
+	font-size:14px;
+	color: #898989;
+}
+
+#main .tool .submit
+{
+	float:left;
+	width:73px;
+	height:37px;
+	background:url(../images/btn.png) no-repeat;
+	color:#fff;
+	margin-left:15px;
+}
+
+#main .tool .description
+{
+	margin-top:10px;
+	color:#82df41;float:left;
+}
+
+#main .links
+{
+	width:100%;
+	float:left;
+	text-align:center;
+	padding-bottom:40px;
+}
+
+#main .links span
+{
+	display:block;
+	padding:20px 0;
+	font-size:24px;
+	color:#434343;
+}
+
+#main .links div
+{
+	background:#fff;
+	width:100%;
+	padding:5px;
+}
+
+#main .about
+{
+	height:275px;
+}
+
+#main .about .tool
+{
+	width:415px;
+}
+
+#main .about .info1
+{
+	border:1px solid #ccc;
+}
+
+#main .about .info2
+{
+	width:60px;
+}
+
+#main .about .submit
+{
+	margin:0px;
+}
+
+#main .about .tool textarea
+{
+	width:320px;
+	height:110px;
+}
+
+#main .service, #main .knowledge
+{
+	height:327px;
+}
+
+#main .login
+{
+	height:260px;
+	padding: 0px;
+}
+
+#main .login .submit {
+    background: rgba(0, 0, 0, 0) url("../images/btn_login.png") no-repeat scroll 0 0;
+    clear: both;
+    height: 95px;
+    margin-left: 0px;
+    width: 67px;
+	float:none;
+}
+
+#main .login .user, #main .login .pass {
+    float: left;
+    font-size: 16px;
+    height: 42px;
+    padding-left: 35px;
+    width: 196px;
+}
+
+#main .login .content
+{
+	width:300px;
+}
+
+#main .login .user, #main .login .pass
+{
+
+}
