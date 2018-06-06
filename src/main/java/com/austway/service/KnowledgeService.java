@@ -20,4 +20,8 @@ public class KnowledgeService {
     public List<Knowledge> findAllByType(Integer type) {
         return knowledgeRepository.findAllByType(type);
     }
+
+    public Knowledge getOne(Integer id) {
+        return knowledgeRepository.findById(id);
+    }
 }

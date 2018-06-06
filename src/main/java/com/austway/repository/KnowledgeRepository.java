@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface KnowledgeRepository extends JpaRepository<Knowledge, String> {
     List<Knowledge> findAllByType(Integer type);
+    Knowledge findById(Integer id);
 }

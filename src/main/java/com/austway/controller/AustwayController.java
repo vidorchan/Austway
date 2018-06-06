@@ -7,6 +7,7 @@ import com.austway.service.KnowledgeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -39,6 +40,14 @@ public class AustwayController {
         Map<String, List<Knowledge>> knowledgeMap = new HashMap<>();
         knowledgeMap.put("knowledges", knowledges);
         return new ModelAndView("knowledge", knowledgeMap);
+    }
+
+    @RequestMapping(value = "knowledgeDetails", method = RequestMethod.GET)
+    public ModelAndView knowledgeDetails(Integer id) {
+        Map<String, Knowledge> knowledgeMap = new HashMap<>();
+        Knowledge kl = knowledgeService.getOne(id);
+        knowledgeMap.put("knowledgeDetails", kl);
+        return new ModelAndView("knowledgeDetails", knowledgeMap);
     }
 
     @RequestMapping(value = "airportsearch")
