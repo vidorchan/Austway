@@ -1,0 +1,12 @@
+
+/**
+contact page
+ */
+#main .page-content
+{
+    padding:20px;
+    border:#999 solid 1px;
+    margin-top:20px;
+    line-height:30px;
+    background:#fff;
+}

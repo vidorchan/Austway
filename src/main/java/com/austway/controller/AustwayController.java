@@ -11,4 +11,9 @@ public class AustwayController {
         return "index";
     }
 
+    @RequestMapping(value = "contact")
+    public String contact() {
+        return "contact";
+    }
+
 }
