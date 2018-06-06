@@ -1,4 +1,38 @@
 
+#main .page-content table
+{
+    margin:0 auto;
+}
+
+/**
+tools search
+ */
+#airportSearch {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#airportSearch label{
+    margin-right: 10px;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+
+#airportSearch input[type='text']{
+    height: 37px;
+    border-radius: 10px;
+    outline:none;
+}
+
+#airportSearch .submit
+{
+    width:73px;
+    height:37px;
+    background:url(../images/btn.png) no-repeat;
+    color:#fff;
+    margin-left:15px;
+    outline: none;
+}
+
 /**
 contact page
  */

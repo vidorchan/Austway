@@ -58,8 +58,7 @@
         </li>
         <li><a href="tools">Cargo tools</a>
             <ul>
-
-
+                <li><a href="airportsearch">Airport Search</a></li>
             </ul>
         </li>
         <li><a href="">Service Online</a>
@@ -82,14 +81,14 @@
     $("#navi .col-1 li").mouseout(function(){
         $(this).find("ul").css("display","none");
     });
-
-    $(document).ready(function(){
-        var val = location.getQueryStringIgnore("s");
-        if(val != '' && val != null) {
-            findInPage(val.toUpperCase());
-            findInPage(val.toLowerCase());
-        }
-    });
+    //
+    // $(document).ready(function(){
+    //     var val = location.getQueryStringIgnore("s");
+    //     if(val != '' && val != null) {
+    //         findInPage(val.toUpperCase());
+    //         findInPage(val.toLowerCase());
+    //     }
+    // });
 
     $(".tool .content .submit").click(function(){
         if($(this).parent().find("select").length > 0) {
