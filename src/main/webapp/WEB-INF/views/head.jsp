@@ -43,12 +43,12 @@
                 <li><a href="service?type=5">Truck Service</a></li>
             </ul>
         </li>
-        <li><a href="tracking?type=1">Cargo Tracking</a>
+        <li><a href="tracking?type=1">Freight Tracking</a>
             <ul>
                 <li><a href="tracking?type=2">Express Tracking</a></li>
             </ul>
         </li>
-        <li><a href="knowledge">Cargo knowledge</a>
+        <li><a href="knowledge">Freight knowledge</a>
             <ul>
                 <li><a href="knowledge?type=1">Air Knowledge</a></li>
                 <li><a href="knowledge?type=2">Sea Knowledge</a></li>

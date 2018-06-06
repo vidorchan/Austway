@@ -1,7 +1,9 @@
 package com.austway.controller;
 
 import com.austway.entity.Airport;
+import com.austway.entity.Knowledge;
 import com.austway.service.AirportService;
+import com.austway.service.KnowledgeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +20,25 @@ public class AustwayController {
     @Autowired
     public AirportService airportService;
 
-    @RequestMapping(value="/")
+    @Autowired
+    public KnowledgeService knowledgeService;
+
+    @RequestMapping(value={"/","/index"})
     public String index() {
         return "index";
+    }
+
+    @RequestMapping(value = "knowledge")
+    public ModelAndView knowledge(Integer type) {
+        List<Knowledge> knowledges = new ArrayList<>();
+        if (null == type) {
+            knowledges = knowledgeService.findAll();
+        } else {
+            knowledges = knowledgeService.findAllByType(type);
+        }
+        Map<String, List<Knowledge>> knowledgeMap = new HashMap<>();
+        knowledgeMap.put("knowledges", knowledges);
+        return new ModelAndView("knowledge", knowledgeMap);
     }
 
     @RequestMapping(value = "airportsearch")

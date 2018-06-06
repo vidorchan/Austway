@@ -5,6 +5,32 @@
 }
 
 /**
+knowledge
+ */
+#main .page-content .content-list {
+    margin: 0 auto;
+    width: 1100px;
+    list-style-image: url(../images/list_dote.png);
+}
+
+#main .page-content .content-list li a {
+    width:100%;
+    font-size:14px;
+    display:block;
+    line-height:30px;
+}
+
+#main .page-content .content-list li a:hover
+{
+    color:#0079d2;
+}
+
+#main .page-content .content-list li span{
+    float: right;
+}
+
+
+/**
 tools search
  */
 #airportSearch {
