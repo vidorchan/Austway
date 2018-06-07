@@ -1,0 +1,124 @@
+/*
+ * jQuery FlexSlider v2.2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+
+/* Browser Resets
+*********************************/
+.slideshow{float:left;position:relative;}
+#carousel{position:absolute;bottom:0;width:926px;float:left;}
+
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+/* Icon Fonts
+*********************************/
+/* Font-face Icons */
+@font-face {
+	font-family: 'flexslider-icon';
+	src:url('../css03/fonts/flexslider-icon.eot');
+	src:url('../css03/fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'),
+url('../css03/fonts/flexslider-icon.woff') format('woff'),
+url('../css03/fonts/flexslider-icon.ttf') format('truetype'),
+url('../css03/fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {margin: 0; padding: 0; width:680px; height:260px; float:left;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides > li:first-child {display: block; -webkit-backface-visibility: visible;}
+/*.flexslider .slides img {width: 100%; display: block;}*/
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "\0020"; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider { margin: 0 0 15px; background: #fff; position: relative; zoom: 1; }
+.flex-viewport { max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; }
+.loading .flex-viewport { max-height: 300px; }
+.flexslider .slides { zoom: 1; }
+.carousel li { margin-right: 5px; }
+
+/* Caption style */
+.flex-caption {position:absolute;top:10px;left:0;margin: 0 15px;padding:0;width:820px;}
+.flex-caption a{display:block;width:133px;height:40px; opacity:0.5;}
+.flex-caption a.leftbtn{background-color:red;float:left;}
+.flex-caption a.rightbtn{background-color:gold;float:left;}
+
+.workingwithus a.leftbtn{margin-top: 296px;margin-left: 55px;}
+.workingwithus a.rightbtn{margin-top: 296px;margin-left: 55px;}
+
+
+/* Direction Nav */
+.flex-direction-nav {*height: 0;float:left; z-index: 10;display:none;}
+.flex-direction-nav a {background:transparent url(../images/blank.gif) top center no-repeat; display: block; width: 50px; height: 50px; margin: -27px 0 0; position: absolute; top: 50%; z-index: 30; overflow: hidden; cursor: pointer; text-indent:-9999px; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease;}
+.flex-direction-nav .flex-prev { left: 2px; }
+.flex-direction-nav .flex-next { right: 2px;}
+.flex-direction-nav .flex-prev:hover {border:1px solid black;border-left:0;}
+.flex-direction-nav .flex-next:hover{border:1px solid black;border-right:0;}
+/*
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover { opacity: 1; }
+.flex-direction-nav .flex-disabled { opacity: 0!important; filter:alpha(opacity=0); cursor: default; }
+.flex-direction-nav a:before  { font-family: "flexslider-icon"; font-size: 40px; display: inline-block; content: '\f001'; }
+.flex-direction-nav a.flex-next:before  { content: '\f002'; }
+*/
+
+/* Pause/Play */
+.flex-pauseplay a {background-image: url(../images/slideshow/pause_play_btn.png); background-repeat:no-repeat; background-color:#E7E7E7;border-top:3px solid #FFF;border-left:3px solid #FFF; display: block; width:52px; height:47px; position: absolute; bottom: 0; right: 0; z-index: 10; overflow: hidden; cursor: pointer; color: #000; text-indent:-9999px; }
+.flex-pauseplay a.flex-pause{background-position: 0 0;}
+.flex-pauseplay a.flex-play{background-position: 0 -47px;}
+/*.flex-pauseplay a:before  { font-family: "flexslider-icon"; font-size: 20px; display: inline-block; content: '\f004'; }
+.flex-pauseplay a:hover  { opacity: 1; }
+.flex-pauseplay a.flex-play:before { content: '\f003'; }*/
+
+/* Control Nav */
+.flex-control-nav {width: auto; position: absolute; left:14px; bottom:14px; z-index:20;background-color:#193151;padding:5px;}
+.flex-control-nav li {margin: 0 5px; float:left; zoom: 1;}
+.flex-control-paging li a {width: 8px; height: 8px; display: block; background-color: #ee8230; border:1px solid #ee8230; cursor: pointer; text-indent: -9999px; -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; transition: all 0.2s ease; }
+.flex-control-paging li a:hover {border-color:#FFF;}
+.flex-control-paging li a.flex-active {background-color:#FFF;border-color:#FFF; cursor: default; }
+
+/*
+.flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+.flex-control-thumbs li {width: 25%; float: left; margin: 0;}
+.flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+.flex-control-thumbs img:hover {opacity: 1;}
+.flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
+*/
+.flex-control-caption {position:absolute;bottom:0;}
+.flex-control-thumbs {width: 926px; position: absolute; left:0; bottom:0;z-index:20;margin:0;padding:0;display:table;}
+.flex-control-thumbs li {display:table-cell;padding: 0 3px 0 0;zoom: 1;}
+.flex-control-thumbs li span {background-color:#E7E7E7;border-top:3px solid #FFF;width:100%;height:47px;float:left; color:#000;cursor:pointer;font-family:Arial, Helvetica, sans-serif;font-size:22px;line-height:46px;z-index:20;text-align:center;}
+.flex-control-thumbs li span:hover { background-color:#1E398C;border-color:#EE2A24; color: #FFF; text-decoration:none; }
+.flex-control-thumbs li span.flex-current { background-color:#1E398C;border-color:#EE2A24; color: #FFF; cursor: default; }
+
+@media screen and (max-width: 860px) {
+  .flex-direction-nav .flex-prev { opacity: 1; left: 10px;}
+  .flex-direction-nav .flex-next { opacity: 1; right: 10px;}
+}
+.caption{background:url(../images/slideshow/ribbon.png) left bottom no-repeat;position:absolute;width:100%;height:100%;margin:0 auto;left:0;top:0;}
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

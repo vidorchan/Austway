@@ -24,9 +24,14 @@ public class AustwayController {
     @Autowired
     public KnowledgeService knowledgeService;
 
-    @RequestMapping(value={"/","/index"})
+    @RequestMapping(value = "/index")
     public String index() {
         return "index";
+    }
+
+    @RequestMapping(value = "/")
+    public String home() {
+        return "newHome";
     }
 
     @RequestMapping(value = "knowledge")
