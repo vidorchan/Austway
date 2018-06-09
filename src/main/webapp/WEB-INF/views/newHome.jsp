@@ -17,73 +17,62 @@
 <body>
 <div id="container">
     <div id="header" class="home">
-        <div class="centre">
+        <div class="centre"><!--style="height: 198px;"-->
             <div style="padding: 15px 25px 21px 21px;">
-                <%--<select>--%>
-                    <%--<option value="en">English</option>--%>
-                    <%--<option value="cn">Chinese</option>--%>
-                <%--</select>--%>
                 <span class="left"><a href=""><img src="images/top_icon.png" alt="Austway" /></a></span>
                 <span class="right">Air freight, shipping, courier, multimodal transport, customs clearance, insurance, warehousing and cargo distribution</span>
             </div>
+            <%--<div>--%>
+                <%--<div>--%>
+                    <%--<img src="images/banner5.jpg" width="500px" height="120px">--%>
+                <%--</div>--%>
+                <%--<div class="lang right" style="height: 80px;text-align: center;padding-top: 50px;">--%>
+                    <%--<a href="index?locale=en"><img src="images/icon_en.png" /></a>--%>
+                    <%--<a href="index?locale=sc"><img src="images/icon_cn.png" /></a>--%>
+                <%--</div>--%>
+            <%--</div>--%>
             <div id="nav">
                 <ul>
-                    <li> <a href="services.html">Services</a>
-                        <div class="flyout col-1">
+                    <li> <a href="/index">Home</a></li>
+                    <li> <a href="/about">About Us</a>
+                        <%--<div class="flyout col-1">--%>
+                        <%--<ul>--%>
+                        <%--<li><a href="">In</a></li>--%>
+                        <%--<li><a href="mission.html">Mission</a></li>--%>
+                        <%--<li><a href="accreditations.html">Accreditations</a></li>--%>
+                        <%--<li><a href="sponsorships-philanthropy.html">Sponsorships and Philanthropy</a></li>--%>
+                        <%--<li><a href="environmental-responsibility.html">Environmental Responsibility</a></li>--%>
+                        <%--</ul>--%>
+                        <%--</div>--%>
+                    </li>
+                    <li> <a href="javascript:void(0);" style="cursor: default;">Services</a>
+                        <div class="flyout col-1" style="width: 160px;">
                             <ul>
-                                <li><a href="national-deliveries.html">National Deliveries</a></li>
-                                <li><a href="international-services.html">International</a></li>
-                                <li><a href="warehousing.html">Warehousing (3PL)</a></li>
-                                <li><a href="home-deliveries.html">Home Deliveries (B2C)</a></li>
+                                <li><a href="/service?type=1">Air Freight</a></li>
+                                <li><a href="/service?type=2">Maritime Transport</a></li>
+                                <li><a href="/service?type=3">Custom Clearance</a></li>
+                                <li><a href="/service?type=4">Overseas arehouse</a></li>
                             </ul>
                         </div>
                     </li>
                     <li>
-                        <a href="customer-tools.html">Customer Tools</a>
-                        <div class="flyout col-1">
-                            <div class="navcol">
-                                <h3><a href="tools-national.html">National</a></h3>
-                                <ul>
-                                    <li><a href="http://www.bslots.com/2.0/"  target="_blank">Online Tracking System (OTS)</a></li>
-                                    <li><a href="http://www.bslods.com/" target="_blank">Online Dispatch System (ODS)</a></li>
-                                    <!--<li><a href="book-a-pick-up.html">Book a Pick-Up</a></li>-->
-                                    <!--<li><a href="cost-calculator.html">Cost Calculator</a></li>-->
-                                    <li><a href="pod.html">View POD</a></li>
-                                    <li><a href="documents.html">Documents</a></li>
-                                    <li><a href="terms-conditions.html" target="_blank">Terms &amp; Conditions</a></li>
-                                </ul>
-                            </div>
-                            <!--<div class="navcol">
-                                <h3 class="blue"><a href="tools-international.html">International</a></h3>
-                                  <ul>
-                                      <li><a href="online-tools.html">Online Tools</a></li>
-                                      <li><a href="documents.html">Documents</a></li>
-                                      <li><a href="inportant-links.html">Important Links</a></li>
-                                  </ul>
-                            </div>-->
-                        </div>
-                    </li>
-                    <li> <a href="history.html">About Us</a>
+                        <a href="javascript:void(0);" style="cursor: default;">Customer Tools</a>
                         <div class="flyout col-1">
                             <ul>
-                                <li><a href="history.html">History</a></li>
-                                <li><a href="mission.html">Mission</a></li>
-                                <li><a href="accreditations.html">Accreditations</a></li>
-                                <li><a href="sponsorships-philanthropy.html">Sponsorships and Philanthropy</a></li>
-                                <li><a href="environmental-responsibility.html">Environmental Responsibility</a></li>
+                                <li><a href="/airportsearch">Airport Search</a></li>
+                                <li><a href="/seaportsearch">Sea Port Search</a></li>
+                                <li><a href="https://www.track-trace.com/aircargo" target="_blank">Airline Search</a></li>
+                                <li><a href="https://www.hsbianma.com/" target="_blank">Commodity Code Search</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li> <a href="careers.html">Careers</a> </li>
-                    <li> <a href="head-office.html">Contact Us</a>
+                    <li> <a href="/knowledge">Freight Knowledge</a>
                         <div class="flyout last">
                             <ul>
-                                <li><a href="head-office.html">Head Office</a></li>
-                                <li><a href="capital-cities.html">Capital Cities</a></li>
-                                <li><a href="become-a-bluestar-customer.html">Become a Bluestar customer</a></li>
-                                <li><a href="need-one-off-quote.html">Need a one-off quote (casual customer)</a></li>
-                                <!--<li><a href="agha-member-inquiry.html">AGHA Member Inquiry</a></li>-->
-                                <li><a href="news-alerts.html">News &amp; Alerts</a></li>
+                                <li><a href="/knowledge?type=1">Air Knowledge</a></li>
+                                <li><a href="/knowledge?type=2">Sea Knowledge</a></li>
+                                <li><a href="/knowledge?type=3">Custom Knowledge</a></li>
+                                <li><a href="/knowledge?type=4">Foreign Knowledge</a></li>
                             </ul>
                         </div>
                     </li>
@@ -118,9 +107,9 @@
             </div>
             <div id="front_feature">
                 <ul>
-                    <li><a href="/"><img src="images/news_alerts.gif" alt="News &amp; Alert" /></a></li>
-                    <li><a href="obtain-a-quote.html"><img src="images/obtain_a_quote.gif" alt="Obtain a Quote" /></a></li>
-                    <li class="last"><a href="head-office.html"><img src="images/contact_bluestar.gif" alt="Contact Bluestar" /></a></li>
+                    <li><a href="/news"><img src="images/news_alerts.gif" alt="News &amp; Alert" /></a></li>
+                    <li><a href="#"><img src="images/obtain_a_quote.gif" alt="" /></a></li>
+                    <li class="last"><a href="/contact"><img src="images/contact_austway.png" alt="Contact Austway" /></a></li>
                 </ul>
             </div>
         </div>
@@ -129,7 +118,7 @@
         <div  class="centre">
             <div class="col1"> <img src="images/we-deliver-solutions.png" alt="We Deliver Solutions"> </div>
             <div class="col2">
-                <p>Bluestar Global Logistics is built on the solid foundations of loyalty, honesty and integrity.</p>
+                <p>Austway is built on the solid foundations of loyalty, honesty and integrity.</p>
                 <p>We have grown from a local family business in 1987 to a global partner offering customers streamlined solutions where we drive your costs down and drive your value up: national transport, international freight forwarding, 3PL warehousing, and B2C Home Deliveries.</p>
                 <p>We pride ourselves on being 100% Australian owned and our formula is Relationships + Reliability = Results.</p>
             </div>
@@ -187,7 +176,7 @@
                 </div>
             </div>
             <div id="right_panel">
-                <h2><span class="white">Latest at</span> <span class="blue">Bluestar</span></h2>
+                <h2><span class="white">Latest at</span> <span class="blue">Austway</span></h2>
                 <div class="last">
                     <h4>27 March 2018</h4>
                     <h3 class="blue">Bluestar Cold Chain Solutions</h3>
@@ -217,16 +206,9 @@
             </div>
         </div>
     </div>
-    <div id="footer" >
-        <div class="centre footer-home">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="head-office.html">Contact Us</a></li>
-                <li><a href="copyright-disclaimer.html">Copyright &amp; Disclaimer</a></li>
-                <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            </ul>
-        </div>
+    <div id="footer">
+        <p>Office address：1001,Aohua Business Buliding.148 Huarong road Da lang,Longhua District,Shenzhen</p>
+        <p>Airfreight Operation:Fist floor,No.2 Buliding Guangsheng 12 lane,Xiashiwei,Fuyong,Baoan District,Shenzhen</p>
     </div>
 </div>
 <script>

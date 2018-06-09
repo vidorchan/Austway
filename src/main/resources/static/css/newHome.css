@@ -252,6 +252,7 @@ textarea {
 
 #nav {
     position: absolute;
+    /*top: 150px;*/
     top: 57px;
     right: 0;
     z-index: 1000;
@@ -286,7 +287,7 @@ textarea {
     color: #193151;
     display: block;
     font-size: 12px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-decoration: none;
 }
 
@@ -317,7 +318,7 @@ textarea {
 }
 
 #nav .flyout.col-1 {
-    width: 250px;
+    width: 200px;
 }
 
 #nav .flyout.col-2 {
@@ -363,7 +364,8 @@ textarea {
 }
 
 #nav li .flyout.last {
-    margin-left: -179px !important;
+    margin-left: -5px !important;
+    width: 160px;
 }
 
 /* BREADCRUMB */
@@ -791,52 +793,7 @@ a.view {
 
 /* FOOTER */
 #footer {
-    clear: both;
-    margin: 0 auto;
-    background: #fff;
-    padding-bottom: 60px;
-    float: left;
-}
-
-#footer ul {
-    float: left;
-    position: relative;
-    list-style: none;
-    padding: 0;
-    margin: 13px 0 13px 0;
-;}
-
-#footer li {
-    float: left;
-    margin: 0;
-    padding: 0;
-}
-
-#footer ul a {
-    display: block;
-    color: #848484;
-    font-size: 12px;
-    text-decoration: none;
-    line-height: 9px;
-    margin: 0;
-    padding: 0 10px 0 10px;
-    border-left: 1px solid #ee7d29;
-}
-
-#footer ul li:first-child a {
-    border: none;
-    padding-left: 10px;
-}
-
-.footer-home {
     border-top: 1px solid #d9d9d9;
-}
-
-.footer-internal {
-    float: left;
-    position: relative;
-    z-index: 0;
-    margin-top: -40px;
-    padding: 40px;
-    background: #fff;
+    text-align: center;
+    clear: both;
 }

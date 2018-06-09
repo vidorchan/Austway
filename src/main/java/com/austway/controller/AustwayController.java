@@ -78,4 +78,10 @@ public class AustwayController {
         return "about";
     }
 
+    @RequestMapping(value = "service")
+    public ModelAndView service(Integer type) {
+        Map<String, Integer> serviceMap = new HashMap<>();
+        serviceMap.put("serviceType",type);
+        return new ModelAndView("service",serviceMap);
+    }
 }
