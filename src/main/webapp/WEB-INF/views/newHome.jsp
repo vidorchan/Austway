@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: vidor
@@ -20,7 +21,7 @@
         <div class="centre"><!--style="height: 198px;"-->
             <div style="padding: 15px 25px 21px 21px;">
                 <span class="left"><a href=""><img src="images/top_icon.png" alt="Austway" /></a></span>
-                <span class="right">Air freight, shipping, courier, multimodal transport, customs clearance, insurance, warehousing and cargo distribution</span>
+                <span class="right"><a href="javascript:void(0)" onclick="buildURL('en_US')">EN</a> | <a href="javascript:void(0)" onclick="buildURL('zh_CN')">CN</a>Air freight, shipping, courier, multimodal transport, customs clearance, insurance, warehousing and cargo distribution</span>
             </div>
             <%--<div>--%>
                 <%--<div>--%>
@@ -33,8 +34,8 @@
             <%--</div>--%>
             <div id="nav">
                 <ul>
-                    <li> <a href="/index">Home</a></li>
-                    <li> <a href="/about">About Us</a>
+                    <li> <a href="/index"><spring:message code="home"/></a></li>
+                    <li> <a href="/about"><spring:message code="about"/></a>
                         <%--<div class="flyout col-1">--%>
                         <%--<ul>--%>
                         <%--<li><a href="">In</a></li>--%>
@@ -224,6 +225,27 @@
             }
         });
     });
+</script>
+<script>
+    function buildURL(locale) {
+        var url = window.location.href.trim();
+
+        if (url.slice(-1) == '/') {
+            url = url.substr(0, url.length - 1);
+        }
+
+        if (url.indexOf('?') == -1) {
+            url += '?locale=' + locale;
+        } else if (url.search('locale=')) {
+            url = url.replace(/locale=.{5}/,'locale=' + locale);
+        } else if (url.search('&')){
+            url += '&locale=' + locale;
+        } else {
+            url += 'locale=' + locale;
+        }
+
+        window.location.href = url;
+    }
 </script>
 </body>
 </html>
