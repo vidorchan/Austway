@@ -1,5 +1,7 @@
 package com.austway;
 
+import com.austway.interceptor.SecurityInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
@@ -14,6 +16,8 @@ import java.util.Locale;
 @Configuration
 public class WebApplicationConfig extends WebMvcConfigurerAdapter{
 
+	@Autowired
+	private SecurityInterceptor securityInterceptor;
 
 	@Bean
 	public LocaleResolver localeResolver() {
@@ -31,6 +35,7 @@ public class WebApplicationConfig extends WebMvcConfigurerAdapter{
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(localeChangeInterceptor());
+		registry.addInterceptor(localeChangeInterceptor()).addPathPatterns("/**");
+		registry.addInterceptor(securityInterceptor).addPathPatterns("/admin/**").excludePathPatterns("/admin/login*");
 	}
 }

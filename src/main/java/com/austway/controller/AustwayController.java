@@ -5,11 +5,16 @@ import com.austway.entity.Knowledge;
 import com.austway.service.AirportService;
 import com.austway.service.KnowledgeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -34,7 +39,7 @@ public class AustwayController {
         return "newHome";
     }
 
-    @RequestMapping(value = "knowledge")
+    @RequestMapping(value = "/knowledge")
     public ModelAndView knowledge(Integer type) {
         List<Knowledge> knowledges = new ArrayList<>();
         if (null == type) {
@@ -43,11 +48,11 @@ public class AustwayController {
             knowledges = knowledgeService.findAllByType(type);
         }
         Map<String, List<Knowledge>> knowledgeMap = new HashMap<>();
-        knowledgeMap.put("knowledges", knowledges);
+        knowledgeMap.put("/knowledges", knowledges);
         return new ModelAndView("knowledge", knowledgeMap);
     }
 
-    @RequestMapping(value = "knowledgeDetails", method = RequestMethod.GET)
+    @RequestMapping(value = "/knowledgeDetails", method = RequestMethod.GET)
     public ModelAndView knowledgeDetails(Integer id) {
         Map<String, Knowledge> knowledgeMap = new HashMap<>();
         Knowledge kl = knowledgeService.getOne(id);
@@ -55,7 +60,21 @@ public class AustwayController {
         return new ModelAndView("knowledgeDetails", knowledgeMap);
     }
 
-    @RequestMapping(value = "airportsearch")
+    @RequestMapping(value = "/knowledgeManager")
+    public ModelAndView knowledgeManager() {
+        Map<String, List<Knowledge>> knowledgeMap = new HashMap<>();
+        List<Knowledge> knowledges = knowledgeService.findAll();
+        knowledgeMap.put("knowledges", knowledges);
+        return new ModelAndView("knowledgeManager",knowledgeMap);
+    }
+
+    @PostMapping(value = "/knowledgeDelete")
+    public ResponseEntity knowledgeDelete(Knowledge knowledge) {
+        knowledgeService.delete(knowledge);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/airportsearch")
     public ModelAndView airportSearch(String code) {
         List<Airport> airportList = new ArrayList<>();
         if (null == code || "".equals(code)) {
@@ -68,20 +87,44 @@ public class AustwayController {
         return new ModelAndView("airportsearch",airportMap);
     }
 
-    @RequestMapping(value = "contact")
+    @RequestMapping(value = "/contact")
     public String contact() {
         return "contact";
     }
 
-    @RequestMapping(value = "about")
+    @RequestMapping(value = "/about")
     public String about() {
         return "about";
     }
 
-    @RequestMapping(value = "service")
+    @RequestMapping(value = "/service")
     public ModelAndView service(Integer type) {
         Map<String, Integer> serviceMap = new HashMap<>();
         serviceMap.put("serviceType",type);
         return new ModelAndView("service",serviceMap);
+    }
+
+    @RequestMapping(value = "/admin/login")
+    public String login() {
+        return "/admin/login";
+    }
+
+    @PostMapping(value = "/admin/loginCheck")
+    public @ResponseBody Map<String, Object> loginCheck(String username, String password, HttpSession session) {
+        Map<String, Object> map = new HashMap<>();
+        if (!"admin".equals(username) || !"admin".equals(password)) {
+            map.put("status", false);
+            map.put("message", "login fail, please try again.");
+            return map;
+        }
+        session.setAttribute("user","loginSuccess");
+        map.put("status",true);
+        map.put("message", "login success.Welcome.");
+        return map;
+    }
+
+    @RequestMapping(value = "/admin/loginSuccess")
+    public String loginSuccess() {
+        return "/admin/loginSuccess";
     }
 }

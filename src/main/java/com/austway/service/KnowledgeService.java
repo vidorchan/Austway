@@ -24,4 +24,8 @@ public class KnowledgeService {
     public Knowledge getOne(Integer id) {
         return knowledgeRepository.findById(id);
     }
+
+    public void delete(Knowledge knowledge) {
+        knowledgeRepository.delete(knowledge);
+    }
 }
