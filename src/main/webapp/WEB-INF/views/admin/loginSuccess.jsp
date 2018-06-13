@@ -18,10 +18,10 @@ Now time: <%=time%>
 <div>
     <ul style="list-style-type: none; padding: 0px;">
         <li>
-            <a href="/knowledgeManager" style="float: left;">Knowledge Manager</a>
+            <a href="/admin/knowledgeManager" style="float: left;">Knowledge Manager</a>
         </li>
         <li>
-            <a href="/NewsManager" style="padding-left: 20px;">News Manager</a>
+            <a href="/admin/NewsManager" style="padding-left: 20px;">News Manager</a>
         </li>
     </ul>
 </div>

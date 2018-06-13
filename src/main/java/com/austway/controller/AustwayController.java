@@ -60,18 +60,21 @@ public class AustwayController {
         return new ModelAndView("knowledgeDetails", knowledgeMap);
     }
 
-    @RequestMapping(value = "/knowledgeManager")
+    @RequestMapping(value = "/admin/knowledgeManager")
     public ModelAndView knowledgeManager() {
         Map<String, List<Knowledge>> knowledgeMap = new HashMap<>();
         List<Knowledge> knowledges = knowledgeService.findAll();
         knowledgeMap.put("knowledges", knowledges);
-        return new ModelAndView("knowledgeManager",knowledgeMap);
+        return new ModelAndView("/admin/knowledgeManager",knowledgeMap);
     }
 
-    @PostMapping(value = "/knowledgeDelete")
-    public ResponseEntity knowledgeDelete(Knowledge knowledge) {
+    @PostMapping(value = "/admin/knowledgeDelete")
+    public @ResponseBody Map<String, Object> knowledgeDelete(Knowledge knowledge) {
+        Map<String, Object> map = new HashMap<>();
         knowledgeService.delete(knowledge);
-        return new ResponseEntity(HttpStatus.OK);
+        map.put("status","ok");
+        map.put("message", "delete success.");
+        return map;
     }
 
     @RequestMapping(value = "/airportsearch")

@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>Title</title>
-    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/jquery.min.js" type="text/javascript"></script>
     <style type="text/css">
         table {
             table-layout:fixed;
@@ -43,11 +43,12 @@
     function del(id) {
         $.ajax({
             type: "POST",
-            url: "/knowledgeDelete",
+            url: "/admin/knowledgeDelete",
             data: {
                 id: id
             },
             success: function (data) {
+                alert(data.message)
                 alert("Delete successfully!!!");
             }
         });
