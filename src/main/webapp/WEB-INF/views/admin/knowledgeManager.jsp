@@ -31,7 +31,7 @@
         <c:forEach items="${knowledges}" var="knowledge">
             <tr><td>${knowledge.title}</td><td>${knowledge.content}</td><td>${knowledge.createDate}</td>
                 <td><a href="" onclick="edit(${knowledge.id})">编辑</a></td>
-                <td><a href="" onclick="del(${knowledge.id})">删除</a></td></tr>
+                <td><a href="javascript:void(0);" onclick="del(${knowledge.id})">删除</a></td></tr>
         </c:forEach>
     </table>
 </div>
@@ -44,12 +44,16 @@
         $.ajax({
             type: "POST",
             url: "/admin/knowledgeDelete",
+            async: true,//default=true
             data: {
                 id: id
             },
             success: function (data) {
-                alert(data.message)
-                alert("Delete successfully!!!");
+                alert(data);
+                window.location.href = "/admin/knowledgeManager";
+            },
+            error: function (XMLResponse) {
+                alert(XMLResponse.responseText);
             }
         });
     }

@@ -69,12 +69,12 @@ public class AustwayController {
     }
 
     @PostMapping(value = "/admin/knowledgeDelete")
-    public @ResponseBody Map<String, Object> knowledgeDelete(Knowledge knowledge) {
+    public @ResponseBody String knowledgeDelete(Integer id) {
         Map<String, Object> map = new HashMap<>();
+        Knowledge knowledge = new Knowledge();
+        knowledge.setId(id);
         knowledgeService.delete(knowledge);
-        map.put("status","ok");
-        map.put("message", "delete success.");
-        return map;
+        return "成功。";
     }
 
     @RequestMapping(value = "/airportsearch")
